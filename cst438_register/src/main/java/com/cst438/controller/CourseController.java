@@ -6,12 +6,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 
 import com.cst438.domain.CourseDTOG;
 import com.cst438.domain.Enrollment;
 import com.cst438.domain.EnrollmentRepository;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:3000"})
 public class CourseController {
 	
 	@Autowired
