@@ -6,11 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import com.cst438.domain.StudentDTO;
 import org.springframework.web.server.ResponseStatusException;
-import org.springframework.transaction.annotation.Transactional;
-
 
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:3000", "https://registerf-cst438.herokuapp.com/"})
 public class StudentController {
 		
     final StudentRepository studentRepository;
@@ -20,7 +19,6 @@ public class StudentController {
     }
     
     @PostMapping("/student")
-    @Transactional
     public StudentDTO addStudent(@RequestBody StudentDTO studentDTO) {
         System.out.println("/student called.");
 
